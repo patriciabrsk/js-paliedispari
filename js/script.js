@@ -67,9 +67,9 @@ checkBtn.addEventListener('click',
 
 function isEvenOrOdd(number) {
     if (number % 2 == 0) {
-        return 'pari';
+        return 'even';
     } 
-    return 'dispari';
+    return 'odd';
 }
 
 // Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
@@ -77,26 +77,23 @@ function isEvenOrOdd(number) {
 checkBtn2 = document.getElementById('play');
 
 // Click event for play button
-checkBtn.addEventListener('click',
+checkBtn2.addEventListener('click',
     function() {
-        // Get text input from user
+        const toggleValue = document.querySelector('input[name="options-outlined"]:checked').value;
         const inputNumber = document.querySelector('.number').value;
-
         const result = document.getElementById('result');
-        const compNum = Math.floor(Math.random() * 5) + 1;
+        compNum = Math.floor(Math.random() * 5) + 1;
 
         // When the sum of inputNumber + compNum is even
-        if (isEvenOrOdd(inputNumber + compNum)) {
+        if (isEvenOrOdd(inputNumber + compNum) == toggleValue) {
+
             // it prints "You win." string to the HTML output
-            document.querySelector('.user-number-displayed').innerHTML = inputNumber;
-            document.querySelector('.comp').innerHTML = compNum;
             result.innerHTML = "You win!"
             result.classList.add('text-success');
         
         // If the sum is odd it prints:
         } else {
-            document.querySelector('.user-number-displayed').innerHTML = inputNumber;
-            document.querySelector('.comp').innerHTML = compNum;
+
             // it prints a "It is not a palindrome." string to the HTML output
             result.innerHTML = "You lose."
             result.classList.add('text-warning');

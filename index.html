@@ -24,13 +24,14 @@
             </div>
             <div class="col d-flex flex-column align-items-center">
                 <h1 class="mb-5">isEvenOrOdd?</h1>
+                <div class="mb-4">
+                    <input type="radio" class="btn-check" name="options-outlined" id="success-outlined" autocomplete="off">
+                    <label id="even" class="btn btn-outline-success me-3" for="success-outlined">Even</label>
+                    <input type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off">
+                    <label id="odd" class="btn btn-outline-danger" for="danger-outlined">Odd</label>
+                </div>
                 <input type="number" class="number form-control-lg rounded-pill" placeholder="Insert a number" required>
                 <button id="play" class="btn btn-outline-dark my-3 rounded-pill text-uppercase me-2">play</button>
-                <div class="numbers">
-                    <span class="user-number-displayed"></span>
-                    <span class="comp"></span>
-                </div>
-                
                 <p id="result" class="display-5"></p>
             </div>
         </div>
