@@ -15,13 +15,15 @@
         Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
  */
 
-const result = document.getElementById('result');
-
+/**
+ * Function that determines whether a word is a palindrome.
+ * @param {string} string - The word 
+ */
 function isPalindrome(string) {
     // Storing all unwanted non-alphanumeric characters into a variable called regex
     let regex = /[\W_]/g;
 
-    // Using the replace() method, which takes our regex pattern and replace it with an empty string.
+    // Using the replace() method, which takes the regex pattern and replaces it with an empty string.
     // Removing all unwanted non-alphanumeric characters
     let str = string.replace(regex, '');
 
@@ -42,15 +44,21 @@ checkBtn = document.getElementById('check');
 // Click event for check button
 checkBtn.addEventListener('click',
     function() {
-
+        // Get text input from user
         const word = document.querySelector('.text').value;
         const result = document.getElementById('result');
 
+        // When the word inserted by the user is a palindrome 
         if (isPalindrome(word)) {
+
+            // it prints a "It is a palindrome." string to the HTML output
             result.innerHTML = "It is a palindrome."
             result.classList.add('text-success');
-
+        
+        // If the word is not a palindrome
         } else {
+
+         // it prints a "It is not a palindrome." string to the HTML output
         result.innerHTML = "It is not a palindrome."
         result.classList.add('text-warning');
         }
