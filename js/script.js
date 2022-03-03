@@ -15,8 +15,7 @@
         Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
  */
 
-// Chiedere all’utente di inserire una parola
-const word = document.querySelector('.text');
+const result = document.getElementById('result');
 
 function isPalindrome(string) {
     // Storing all unwanted non-alphanumeric characters into a variable called regex
@@ -29,9 +28,33 @@ function isPalindrome(string) {
     let reversedString = str.split('').reverse().join('');
     // console.log(reversedString);
     
-    if (reversedString === str) return true;
+    if (reversedString === str) {
+        // console.log('It is a palindrome');
+        return true;
+    }
+    // console.log('It is not a palindrome');
     return false;
 }
-isPalindrome("gag9");
+// isPalindrome('gaga');
+
+checkBtn = document.getElementById('check');
+
+// Click event for check button
+checkBtn.addEventListener('click',
+    function() {
+
+        const word = document.querySelector('.text').value;
+        const result = document.getElementById('result');
+
+        if (isPalindrome(word)) {
+            result.innerHTML = "It is a palindrome."
+            result.classList.add('text-success');
+
+        } else {
+        result.innerHTML = "It is not a palindrome."
+        result.classList.add('text-warning');
+        }
+    }
+);
 
 // Pari e Dispari
