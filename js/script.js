@@ -14,3 +14,17 @@
         Scriviamo sempre in italiano i passaggi che vogliamo fare
         Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
  */
+
+// Chiedere all’utente di inserire una parola
+const word = document.querySelector('.text');
+
+function isPalindrome(string){
+    let reversedString = string.split('').reverse().join('');
+    console.log(reversedString);
+    
+    // for (let i = 0; i < string.length; i++) {}
+}
+
+isPalindrome("ciao");
+
+// Pari e Dispari
