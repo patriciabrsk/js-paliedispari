@@ -18,13 +18,20 @@
 // Chiedere all’utente di inserire una parola
 const word = document.querySelector('.text');
 
-function isPalindrome(string){
-    let reversedString = string.split('').reverse().join('');
-    console.log(reversedString);
+function isPalindrome(string) {
+    // Storing all unwanted non-alphanumeric characters into a variable called regex
+    let regex = /[\W_]/g;
+
+    // Using the replace() method, which takes our regex pattern and replace it with an empty string.
+    // Removing all unwanted non-alphanumeric characters
+    let str = string.replace(regex, '');
+
+    let reversedString = str.split('').reverse().join('');
+    // console.log(reversedString);
     
-    if (reversedString === string) return true;
+    if (reversedString === str) return true;
     return false;
 }
-isPalindrome("gag");
+isPalindrome("gag9");
 
 // Pari e Dispari
