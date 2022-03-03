@@ -2,17 +2,6 @@
  * Palidroma:
     Chiedere all’utente di inserire una parola
     Creare una funzione per capire se la parola inserita è palindroma
-    
-    Pari e Dispari
-        L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
-        Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
-        Sommiamo i due numeri
-        Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-        Dichiariamo chi ha vinto.
-    
-    Consigli del giorno
-        Scriviamo sempre in italiano i passaggi che vogliamo fare
-        Scriviamo sempre solo un pezzetto di codice alla volta, se funziona allora andiamo avanti.
  */
 
 /**
@@ -46,23 +35,71 @@ checkBtn.addEventListener('click',
     function() {
         // Get text input from user
         const word = document.querySelector('.text').value;
-        const result = document.getElementById('result');
+        const message = document.getElementById('message');
 
         // When the word inserted by the user is a palindrome 
         if (isPalindrome(word)) {
 
             // it prints a "It is a palindrome." string to the HTML output
-            result.innerHTML = "It is a palindrome."
-            result.classList.add('text-success');
+            message.innerHTML = "It is a palindrome."
+            message.classList.add('text-success');
         
         // If the word is not a palindrome
         } else {
 
          // it prints a "It is not a palindrome." string to the HTML output
-        result.innerHTML = "It is not a palindrome."
-        result.classList.add('text-warning');
+        message.innerHTML = "It is not a palindrome."
+        message.classList.add('text-warning');
         }
     }
 );
 
-// Pari e Dispari
+/**
+ * Pari e Dispari
+ * 
+ * L’utente sceglie pari o dispari e inserisce un numero da 1 a 5.
+ * Generiamo un numero random (sempre da 1 a 5) per il computer (usando una funzione).
+ * Sommiamo i due numeri
+ * Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+ * Dichiariamo chi ha vinto. 
+ * 
+ **/
+
+function isEvenOrOdd(number) {
+    if (number % 2 == 0) {
+        return 'pari';
+    } 
+    return 'dispari';
+}
+
+// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
+
+checkBtn2 = document.getElementById('play');
+
+// Click event for play button
+checkBtn.addEventListener('click',
+    function() {
+        // Get text input from user
+        const inputNumber = document.querySelector('.number').value;
+
+        const result = document.getElementById('result');
+        const compNum = Math.floor(Math.random() * 5) + 1;
+
+        // When the sum of inputNumber + compNum is even
+        if (isEvenOrOdd(inputNumber + compNum)) {
+            // it prints "You win." string to the HTML output
+            document.querySelector('.user-number-displayed').innerHTML = inputNumber;
+            document.querySelector('.comp').innerHTML = compNum;
+            result.innerHTML = "You win!"
+            result.classList.add('text-success');
+        
+        // If the sum is odd it prints:
+        } else {
+            document.querySelector('.user-number-displayed').innerHTML = inputNumber;
+            document.querySelector('.comp').innerHTML = compNum;
+            // it prints a "It is not a palindrome." string to the HTML output
+            result.innerHTML = "You lose."
+            result.classList.add('text-warning');
+        }
+    }
+);

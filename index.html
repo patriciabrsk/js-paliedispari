@@ -16,12 +16,21 @@
 <body>
     <main class="container">
         <div class="row justify-content-center pt-5">
-            <div class="col-12 text-center">
+            <div class="col d-flex flex-column align-items-center">
                 <h1 class="title mb-5">isPalindrome?</h1>
                 <input type="text" class="text form-control-lg rounded-pill" placeholder="Insert a word" required>
-            </div>
-            <div class="col-12 text-center">
                 <button id="check" class="btn btn-outline-dark my-3 rounded-pill text-uppercase me-2">check</button>
+                <p id="message" class="display-5"></p>
+            </div>
+            <div class="col d-flex flex-column align-items-center">
+                <h1 class="mb-5">isEvenOrOdd?</h1>
+                <input type="number" class="number form-control-lg rounded-pill" placeholder="Insert a number" required>
+                <button id="play" class="btn btn-outline-dark my-3 rounded-pill text-uppercase me-2">play</button>
+                <div class="numbers">
+                    <span class="user-number-displayed"></span>
+                    <span class="comp"></span>
+                </div>
+                
                 <p id="result" class="display-5"></p>
             </div>
         </div>
