@@ -43,6 +43,7 @@ checkBtn.addEventListener('click',
             // it prints a "It is a palindrome." string to the HTML output
             message.innerHTML = "It is a palindrome."
             message.classList.add('text-success');
+            message.classList.remove('text-warning');
         
         // If the word is not a palindrome
         } else {
@@ -50,6 +51,8 @@ checkBtn.addEventListener('click',
          // it prints a "It is not a palindrome." string to the HTML output
         message.innerHTML = "It is not a palindrome."
         message.classList.add('text-warning');
+        message.classList.remove('text-success');
+
         }
     }
 );
@@ -90,6 +93,7 @@ checkBtn2.addEventListener('click',
             // it prints "You win." string to the HTML output
             result.innerHTML = "You win!"
             result.classList.add('text-success');
+            result.classList.remove('text-warning');
         
         // If the sum is odd it prints:
         } else {
@@ -97,6 +101,7 @@ checkBtn2.addEventListener('click',
             // it prints a "It is not a palindrome." string to the HTML output
             result.innerHTML = "You lose."
             result.classList.add('text-warning');
+            result.classList.remove('text-success');
         }
     }
 );
