@@ -22,9 +22,9 @@ function isPalindrome(string){
     let reversedString = string.split('').reverse().join('');
     console.log(reversedString);
     
-    // for (let i = 0; i < string.length; i++) {}
+    if (reversedString === string) return true;
+    return false;
 }
-
-isPalindrome("ciao");
+isPalindrome("gag");
 
 // Pari e Dispari
