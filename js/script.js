@@ -68,6 +68,10 @@ checkBtn.addEventListener('click',
  * 
  **/
 
+/**
+ * Function that checks if a number is even or odd.
+ * @param {number} number- the number to check
+ */
 function isEvenOrOdd(number) {
     if (number % 2 == 0) {
         return 'even';
@@ -75,8 +79,7 @@ function isEvenOrOdd(number) {
     return 'odd';
 }
 
-// Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
-
+// Select play button element from DOM
 checkBtn2 = document.getElementById('play');
 
 // Click event for play button
