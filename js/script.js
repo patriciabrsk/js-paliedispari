@@ -85,10 +85,10 @@ function isEvenOrOdd(number) {
 }
 
 // Select play button element from DOM
-checkBtn2 = document.getElementById('play');
+playBtn = document.getElementById('play');
 
 // Click event for play button
-checkBtn2.addEventListener('click', () => {
+playBtn.addEventListener('click', () => {
         const toggleValue = document.querySelector('[name="options-outlined"]:checked').value;
         console.log(toggleValue);
         const inputNumber = document.querySelector('.number').valueAsNumber;
