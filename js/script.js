@@ -6,7 +6,8 @@
 
 /**
  * Function that determines whether a word is a palindrome.
- * @param {string} string - The word 
+ * @param {*} string - The word 
+ * @returns true or false if the word is a palindrome
  */
 function isPalindrome(string) {
     // Storing all unwanted non-alphanumeric characters into a variable called regex
@@ -73,7 +74,8 @@ checkBtn.addEventListener('click',
 
 /**
  * Function that checks if a number is even or odd.
- * @param {number} number - the number to check
+ * @param {*} number - the number to check
+ * @returns 'even' if number is even and 'odd' if it is odd
  */
 function isEvenOrOdd(number) {
     if (number % 2 == 0) {
@@ -88,19 +90,20 @@ checkBtn2 = document.getElementById('play');
 // Click event for play button
 checkBtn2.addEventListener('click',
     function() {
-        const toggleValue = document.querySelector('input[name="options-outlined"]:checked').value;
+        const toggleValue = document.querySelector('[name="options-outlined"]:checked').value;
+        console.log(toggleValue);
         const inputNumber = document.querySelector('.number').value;
-        const result = document.getElementById('result');
         const compNum = Math.floor(Math.random() * 5) + 1;
+        const result = document.getElementById('result');
+        let sum = inputNumber + compNum;
 
-        // When the sum of inputNumber + compNum is even
-        if (isEvenOrOdd(inputNumber + compNum) == toggleValue) {
-
+        // When sum is even
+        if (isEvenOrOdd(sum) == toggleValue) {
             // it prints "You win." string to the HTML output
             result.innerHTML = "You win!"
             result.classList.add('text-success');
             result.classList.remove('text-warning');
-        
+
         // If the sum is odd it prints:
         } else {
 
@@ -108,6 +111,8 @@ checkBtn2.addEventListener('click',
             result.innerHTML = "You lose."
             result.classList.add('text-warning');
             result.classList.remove('text-success');
+            console.log(isEvenOrOdd(sum));
+            console.log(isEvenOrOdd(toggleValue));
         }
     }
 );
