@@ -88,18 +88,21 @@ function isEvenOrOdd(number) {
 checkBtn2 = document.getElementById('play');
 
 // Click event for play button
-checkBtn2.addEventListener('click',
-    function() {
+checkBtn2.addEventListener('click', () => {
         const toggleValue = document.querySelector('[name="options-outlined"]:checked').value;
         console.log(toggleValue);
-        const inputNumber = document.querySelector('.number').value;
+        const inputNumber = document.querySelector('.number').valueAsNumber;
         const compNum = Math.floor(Math.random() * 5) + 1;
         const result = document.getElementById('result');
         let sum = inputNumber + compNum;
+        console.log(inputNumber, compNum);
+        console.log(sum);
 
         // When sum is even
-        if (isEvenOrOdd(sum) == toggleValue) {
+        if (isEvenOrOdd(sum) === toggleValue) {
             // it prints "You win." string to the HTML output
+            console.log(toggleValue);
+            console.log(sum);
             result.innerHTML = "You win!"
             result.classList.add('text-success');
             result.classList.remove('text-warning');
@@ -111,8 +114,8 @@ checkBtn2.addEventListener('click',
             result.innerHTML = "You lose."
             result.classList.add('text-warning');
             result.classList.remove('text-success');
-            console.log(isEvenOrOdd(sum));
-            console.log(isEvenOrOdd(toggleValue));
+            // console.log(isEvenOrOdd(sum));
+            // console.log(isEvenOrOdd(toggleValue));
         }
     }
 );
