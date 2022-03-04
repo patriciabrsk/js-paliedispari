@@ -95,8 +95,6 @@ checkBtn2.addEventListener('click', () => {
         const compNum = Math.floor(Math.random() * 5) + 1;
         const result = document.getElementById('result');
         let sum = inputNumber + compNum;
-        console.log(inputNumber, compNum);
-        console.log(sum);
 
         // When sum is even
         if (isEvenOrOdd(sum) === toggleValue) {
