@@ -16,6 +16,9 @@ function isPalindrome(string) {
     // Removing all unwanted non-alphanumeric characters
     let str = string.replace(regex, '');
 
+    // Reversing a string: converting it to an array of characters with a split() method, 
+    // then reverse the characters with reverse() in the array, 
+    // and then join() to join them all back together into a string
     let reversedString = str.split('').reverse().join('');
     // console.log(reversedString);
     
