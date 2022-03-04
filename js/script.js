@@ -91,7 +91,7 @@ checkBtn2.addEventListener('click',
         const toggleValue = document.querySelector('input[name="options-outlined"]:checked').value;
         const inputNumber = document.querySelector('.number').value;
         const result = document.getElementById('result');
-        compNum = Math.floor(Math.random() * 5) + 1;
+        const compNum = Math.floor(Math.random() * 5) + 1;
 
         // When the sum of inputNumber + compNum is even
         if (isEvenOrOdd(inputNumber + compNum) == toggleValue) {
