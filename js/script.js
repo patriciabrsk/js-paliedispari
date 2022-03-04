@@ -70,7 +70,7 @@ checkBtn.addEventListener('click',
 
 /**
  * Function that checks if a number is even or odd.
- * @param {number} number- the number to check
+ * @param {number} number - the number to check
  */
 function isEvenOrOdd(number) {
     if (number % 2 == 0) {
