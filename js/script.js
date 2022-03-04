@@ -108,7 +108,7 @@ checkBtn2.addEventListener('click', () => {
         // If the sum is odd it prints:
         } else {
 
-            // it prints a "It is not a palindrome." string to the HTML output
+            // it prints a "You lose." to the HTML output
             result.innerHTML = "You lose."
             result.classList.add('text-warning');
             result.classList.remove('text-success');
