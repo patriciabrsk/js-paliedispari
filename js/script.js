@@ -112,8 +112,6 @@ checkBtn2.addEventListener('click', () => {
             result.innerHTML = "You lose."
             result.classList.add('text-warning');
             result.classList.remove('text-success');
-            // console.log(isEvenOrOdd(sum));
-            // console.log(isEvenOrOdd(toggleValue));
         }
     }
 );
